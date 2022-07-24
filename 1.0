@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<string.h>
+struct BOOK
+{
+	char name[20];
+	int price;
+};
+int main()
+{
+	struct BOOK b1={ "C++",20 };
+	strcpy(b1.name, "C语言程序设计");
+     printf("%s\n", b1.name);
+	//printf("书名%d", b1.price);
+	//struct BOOK* p = &b1;
+	//	printf("%d\n", price);
+
+}
+
+//struct BOOK
+//{
+//	char name[24];
+////////	int price;
+//};
+//	int main()
+//	{
+//		struct BOOK b2={"C语言程序设计"，20 };
+//		printf("书名=%s\n", b2.name);
+//		printf("价格=%d\n", b2.price);
+//       return 0;
+//
+//      
