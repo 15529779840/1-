@@ -1,0 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//#include<stdio.h>
+//int main()
+//{
+//	int a=0;
+//	scanf("%d", &a);
+//	if (a % 2 == 1)
+//		printf("%d为奇数", a);
+//	else
+//		printf("%d不是奇数", a);
+//	return 0;
+//		
+//}
+
+#include<stdio.h>
+int main()
+{
+	int ch;
+	while ((ch = getchar()) != EOF)
+	{
+		putchar(ch);
+	}
+	//int i=1;
+	//while (i <= 10)
+	//{
+	//	if (i == 5)
+	//		//break;
+	//		continue;
+	//	printf("%d", i);
+	//	i++;
+	//	
+	//}
+	return 0;
+}
+
+
+
+
