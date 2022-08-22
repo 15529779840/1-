@@ -1,3 +1,4 @@
+game.c
 #include "game.h"
 void InitBoard(char board[ROW][COL], int row, int col)
 {
@@ -125,3 +126,91 @@ char Iswin(char board[ROW][COL], int row, int col)
 	}
 	return 'C';
 }
+
+text.c
+#include "game.h"
+void game()
+{
+	char ret = 0;
+	char board[ROW][COL] = { 0 };
+	InitBoard( board, ROW, COL);
+	DisplayBoard(board,ROW,COL);
+	while (1)
+	{
+		Playermove(board, ROW, COL);
+		DisplayBoard(board, ROW, COL);
+		ret = Iswin(board, ROW, COL);
+		if (ret != 'C')
+		{
+			break;
+		}
+		Computermove(board, ROW, COL);
+		DisplayBoard(board, ROW, COL);
+		ret = Iswin(board, ROW, COL);
+		if (ret != 'C')
+		{
+			break;
+		}
+	}
+		if (ret == '*')
+		{
+			printf("玩家赢\n");
+		}
+		else if (ret == '#')
+		{
+			printf("电脑赢\n");
+		}
+		else
+		{
+			printf("平局\n");
+		}
+	
+}
+void menu()
+{
+	printf("*************************\n");
+	printf("***1.play     0.exit****\n");
+	printf("*************************\n");
+}
+void test()
+{
+	int input = 0;
+	srand((unsigned int)time(NULL));
+	do
+	{
+		menu();
+		scanf("%d", &input);
+		switch (input)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			printf("退出游戏\n");
+			break;
+		default:
+			printf("输入错误，请重新输入\n");
+			break;
+		}
+
+	} while (input);
+}
+int main()
+{
+	test();
+	return 0;
+}
+
+game.h
+
+#define ROW 3
+#define COL 3
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+void InitBoard(char board[ROW][COL], int row, int col);
+void DisplayBoard(char board[ROW][COL], int row, int col);
+void Playermove(char board[ROW][COL], int row, int col);
+void Computermove(char board[ROW][COL], int row,int col);
+char Iswin(char board[ROW][COL], int row, int col);
