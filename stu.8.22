@@ -75,9 +75,9 @@ void Computermove(char board[ROW][COL], int row, int col)
 	{
 		x = rand() % row;
 		y = rand() % col;
-		if (board[x - 1][y - 1] == ' ');
+		if (board[x][y] == ' ');
 		{
-			board[x - 1][y - 1] = '#';
+			board[x][y] = '#';
 			break;
 		}
 
